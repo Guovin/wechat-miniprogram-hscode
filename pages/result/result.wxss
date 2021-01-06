@@ -1,0 +1,4 @@
+.result{
+  background-color: #2C4362;
+  height: 100vh;
+}

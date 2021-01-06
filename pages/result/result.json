@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "default-view": "../../components/default/default",
+    "mp-toptips": "weui-miniprogram/toptips/toptips"
+  }
+}

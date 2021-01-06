@@ -1,0 +1,4 @@
+<!--index.wxml-->
+  <view class="home">
+    <default-view></default-view>
+  </view>

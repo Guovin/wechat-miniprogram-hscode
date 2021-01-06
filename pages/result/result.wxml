@@ -1,0 +1,7 @@
+<!--result.wxml-->
+<view class="result">
+  <default-view></default-view>
+  <!-- toptips请求提示 -->
+  <mp-toptips msg="{{msg}}" type="type" show="{{show}}"></mp-toptips>
+  <span>搜索结果</span>
+</view>
