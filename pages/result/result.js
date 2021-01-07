@@ -16,11 +16,12 @@ Page({
       method:'POST',
       success(res){
         console.log(res.data)
-        that.setData({type:'success',msg:'搜索成功',show:true})
+        that.setData({type:'success',msg:'查询成功',show:true,dataList:res.data.data.list})
+        console.log(that.data.dataList)
       },
       fail(res){
         console.log(res.data)
-        that.setData({type:'error',msg:'搜索失败',show:true})
+        that.setData({type:'error',msg:'查询失败',show:true})
       }
     })
   },

@@ -1,7 +1,10 @@
 <!--result.wxml-->
 <view class="result">
-  <default-view></default-view>
+  <include src="../../components/default/default.wxml"></include>
+  <search></search>
   <!-- toptips请求提示 -->
-  <mp-toptips msg="{{msg}}" type="type" show="{{show}}"></mp-toptips>
-  <span>搜索结果</span>
+  <mp-toptips msg="{{msg}}" type="{{type}}" show="{{show}}"></mp-toptips>
+  <view class="search_result">
+  <view wx:for="{{dataList}}" wx:key="*this">{{index+1}}:{{item.hscode_name}}</view>
+  </view>
 </view>

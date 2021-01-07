@@ -2,3 +2,7 @@
   background-color: #2C4362;
   height: 100vh;
 }
+
+.search_result{
+  text-align: center;
+}

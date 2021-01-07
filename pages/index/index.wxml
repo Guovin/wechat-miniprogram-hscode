@@ -1,4 +1,5 @@
 <!--index.wxml-->
   <view class="home">
-    <default-view></default-view>
+    <include src="../../components/default/default.wxml"></include>
+    <search></search>
   </view>

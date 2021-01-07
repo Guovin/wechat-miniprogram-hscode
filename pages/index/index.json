@@ -1,6 +1,5 @@
 {
   "usingComponents": {
-    "weui-searchbar": "weui-miniprogram/searchbar/searchbar",
-    "default-view": "../../components/default/default"
+    "search": "../../components/search/search"
   }
 }

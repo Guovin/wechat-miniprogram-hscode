@@ -6,23 +6,6 @@
             <span class="logo_hs">HS</span><span>Code<span class="logo_vip">.VIP</span></span>
           </span>
         </view>
-        <!-- 搜索框区域 -->
-      <view class="search_view">
-        <view class="weui-search-bar {{searchState ? 'weui-search-bar_focusing' : ''}} {{extClass}}">
-    <view class="weui-search-bar__form">
-        <view class="weui-search-bar__box">
-            <icon class="weui-icon-search" type="search" size="12"></icon>
-            <input type="text" class="weui-search-bar__input" placeholder="输入商品名称或编码" value="{{value}}" focus="{{focus}}" bindblur="inputBlur" bindfocus="inputFocus" bindconfirm="bindKeyInput" />
-            <text class="weui-icon-clear" hover-class="weui-active" wx:if="{{value.length > 0}}" bindtap="clearInput"></text>
-        </view>
-        <label class="weui-search-bar__label" bindtap="showInput">
-            <icon class="weui-icon-search" type="search" size="12"></icon>
-            <text class="weui-search-bar__text">搜索</text>
-        </label>
-    </view>
-    <view wx:if="{{cancel && searchState}}" class="weui-search-bar__cancel-btn" bindtap="hideInput">取消</view>
-</view>
-      </view>
       <!-- footer区域 -->
       <view class="weui-footer weui-footer_fixed-bottom">
             <view class="weui-footer__links">
