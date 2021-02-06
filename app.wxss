@@ -1,5 +1,5 @@
 /**app.wxss**/
-@import 'weui.wxss';
+@import 'iconfont.wxss';
 
 /**index.wxss**/
 .logo_container {
@@ -12,22 +12,10 @@
   user-select: none;
 }
 
-.logo {
-  font-size: 70rpx;
-  color: #44BA81;
-  letter-spacing: 0;
-  text-shadow: 0rpx 1rpx 0rpx #999, 0rpx 2rpx 0rpx #888, 0rpx 3rpx 0rpx #777, 0rpx 4rpx 0rpx #666, 0rpx 5rpx 0rpx #555, 0rpx 6rpx 0rpx #444, 0rpx 7rpx 0rpx #333, 0rpx 8rpx 7rpx #001135;
-}
-
-.logo_hs {
-  color: #0081CD;
-  font-size: 70rpx;
-}
-
-.logo_vip {
-  font-size: 40rpx;
-  color: goldenrod;
-  margin-left: 3rpx;
+.logo_img{
+  height: 70rpx;
+  width: 300rpx;
+  margin-top: 30rpx;
 }
 
 .footer_first{
@@ -47,10 +35,67 @@
 
 .search_view{
   width: 80%;
-  margin: 60rpx auto;
-  border-radius: 5px;
+  margin: 40rpx auto;
+  border-radius: 6rpx;
 }
 
 .weui-search-bar{
-  border-radius: 5px;
+  border-radius: 6rpx;
+  padding: 0;
+}
+
+.weui-search-bar__cancel-btn{
+  margin: 0 15rpx;
+}
+
+.goTop{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  position: fixed;
+  right:80rpx;
+  bottom:250rpx;
+  background: rgba(0,0,0,.3);
+  text-align: center;
+}
+
+.icon-fanhuidingbu{
+  font-size: 65rpx;
+  position: relative;
+  top:-6rpx;
+  color:  rgba(0,0,0,.5);
+}
+
+
+
+/* 暗黑模式下应用的样式 */
+@media (prefers-color-scheme: dark) {
+  .icon-fanhuidingbu{
+    color:  rgba(148, 145, 145, 0.5);
+  }
+
+  .weui-search-bar{
+    background: #2e2e2e;
+  }
+
+  .weui-search-bar__form{
+    background: #191919;
+    border-radius: 0;
+  }
+
+  .weui-search-bar__label{
+    background:#2e2e2e;
+  }
+
+  .weui-icon-search{
+    color: white;
+  }
+
+  .weui-search-bar__box .weui-search-bar__input{
+    color:white;
+  }
+
+  .weui-footer__text{
+    color:grey;
+  }
 }

@@ -1,0 +1,57 @@
+<!--components/avatar.wxml-->
+<!-- 消息头像标识 -->
+<view class="message_container" bindtap="showDialog">
+  <view class="message_avatar"></view>
+  <view class="status_spot"></view>
+</view>
+
+<!-- 授权提示对话框 -->
+<view class="dialog_container" wx:if="{{showAuthTip}}">
+<view class="authTip_dialog">
+  <view class="authTip_content">使用反馈功能需要先进行授权哦</view>
+      <view class="dialog_footer">
+        <button size="mini" type="warn" bindtap="authButtonNo" class="btn_no">拒绝</button>
+        <button size="mini" type="primary" bindtap="authButtonYes" open-type="getUserInfo" class="btn_yes">同意</button>
+      </view>
+    </view>
+</view>
+
+<!-- 反馈对话框区域 -->
+<view class="dialog_container" wx:if="{{dialogFormVisible}}">
+<view class="feedBack_dialog">
+  <view class="dialog_title">反馈建议</view>
+      <view class="history_message">
+        <view wx:if="{{nothingTip}}" class="nothing_tip"><span class="tip_content">无反馈记录</span></view>
+        <scroll-view scroll-y="true"  scroll-into-view="{{viewInto}}"  style="height:{{dialogScrollHeight}};">
+        <block wx:for="{{myStorage}}" wx:key="*this">
+        <view class="sent_message" id="message_{{index}}">
+          <view class="sent_address">({{item.email}}){{item.name}}</view>
+          <view class="content_avatar">
+            <icon class="iconfont icon-chenggong"></icon>
+          <view class="content_time">
+            <view class="sent_content">{{item.content}}</view>
+            <view class="sent_time">
+              <p>{{item.time}}</p>
+            </view>
+          </view>
+          <view class="avatar_image"><image src="{{avatarUrl}}" class="avatar_pic"></image></view>
+        </view>
+        </view>
+      </block>
+    </scroll-view>
+      </view>
+        <form bindsubmit='FeedBack'>
+        <view class="email_input">
+          <icon class="iconfont icon-youxiang"></icon>
+          <input bindinput="onInputEmail" value="{{form.name}}" placeholder="请输入您的邮箱地址" class="input_content" name="name" ></input>
+        </view>
+        <view class="content_textarea" bindtap="focusOn">
+          <textarea class="input_textarea" confirm-type="return" focus="{{textarea_focus}}" auto-height="true" maxlength="-1" fixed="true" bindinput="onTextarea" value="{{form.massage}}"  placeholder="请输入内容" name="massage"></textarea>
+        </view>
+        <view class="dialog_footer">
+        <button bindtap="closeFeedBack" class="btn_cancel">返回</button>
+        <button form-type='submit' type="primary"  class="btn_send" loading="{{loading}}">发送</button>
+      </view>
+      </form>
+    </view>
+</view>

@@ -1,5 +1,10 @@
 <!--index.wxml-->
+<scroll-view class="home_scroll" refresher-enabled="true" style="height:{{scrollHeight}}px">
   <view class="home">
-    <include src="../../components/default/default.wxml"></include>
+    <logo></logo>
     <search></search>
+    <button open-type="share" type="primary" class="share_btn">分享</button>
+    <avatar></avatar>
+    <my-footer></my-footer>
   </view>
+</scroll-view>

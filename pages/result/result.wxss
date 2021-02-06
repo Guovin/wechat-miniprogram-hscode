@@ -1,8 +1,84 @@
 .result{
   background-color: #2C4362;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
+  display:flex;
+  flex-direction: column;
+}
+
+.result_scorll{
+  background-color: #2C4362;
+}
+
+.default{
+  position: absolute;
+  bottom:0;
 }
 
 .search_result{
-  text-align: center;
+  flex:1;
+}
+
+.result_card{
+  width: 85%;
+  border-radius: 6rpx;
+  background-color:white;
+  margin: 0 auto 25rpx auto;
+  padding: 10rpx 0 10rpx 15rpx;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2rpx 20rpx rgba(0, 0, 0, 0.15) !important;
+}
+
+.result_name{
+  font-size:30rpx;
+  font-weight: bold;
+  text-align: left;
+}
+
+.result_hscode{
+  font-size: 40rpx;
+  font-weight: bolder;
+  text-align: left;
+}
+
+.result_retax{
+  color: #44CA86;
+  font-size: 28rpx;
+  text-align: left;
+}
+
+.icon-you{
+  font-size: 50rpx;
+  color: #BBBBBB;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.title_retax{
+  color:#6E6E6E;
+}
+
+my-footer{
+  margin-top: 80rpx;
+}
+
+/* 暗黑模式下应用的样式 */
+@media (prefers-color-scheme: dark) {
+  .result{
+    background: #191919;
+  }
+
+  .result_scorll{
+    background-color: #191919;
+  }
+
+  .result_card{
+    background: #2e2e2e;
+  }
+
+  .title_retax{
+    color:#909399;
+  }
 }

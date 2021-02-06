@@ -3,4 +3,94 @@
   background-color: #2C4362;
   height: 100%;
   min-height: 100vh;
+  display:flex;
+  flex-direction: column;
+}
+
+.home_scroll{
+  background-color: #2C4362;
+}
+
+avatar{
+ flex:1;
+}
+
+.treeCard {
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  width: 65%;
+  background-color: rgba(255, 255, 255, 0.01);
+  border: rgba(255, 255, 255, 0.01);
+}
+
+.cate_title {
+  font-size: 16px;
+  color: #409EFF;
+  font-weight: bold;
+  margin: 0 auto 5px auto;
+  text-align: center;
+}
+
+.tree_card {
+  border: 1px solid #ebeef5;
+  background-color: #fff;
+  color: #303133;
+  -webkit-transition: .3s;
+  transition: .3s;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15) !important;
+  padding: 10px 20px 20px 20px;
+}
+
+.hot_card {
+  border: 1px solid #ebeef5;
+  background-color: #fff;
+  color: #303133;
+  -webkit-transition: .3s;
+  transition: .3s;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15) !important;
+  padding: 10px 20px 20px 20px;
+}
+
+.hot_title {
+  font-size: 16px;
+  color: #F56C6C;
+  font-weight: bold;
+  margin: 0 auto 10px auto;
+  text-align: center;
+}
+
+.hot_smallCard {
+  height: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid rgba(95, 92, 92, 0.1);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  padding: 20px 0;
+  color: #606266;
+}
+
+.parentFont {
+  font-size: 15px;
+}
+
+.share_btn{
+  position: relative;
+  top:55%;
+}
+
+/* 暗黑模式下应用的样式 */
+@media (prefers-color-scheme: dark) {
+  .home{
+    background: #191919;
+  }
+
+  .home_scroll{
+    background: #191919;
+  }
 }

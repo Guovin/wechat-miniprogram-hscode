@@ -1,10 +1,29 @@
 <!--result.wxml-->
+<scroll-view class="result_scorll" style="height:{{scrollHeight}}px" bindscroll="scrollDistance" scroll-y="true" scroll-with-animation="true" scroll-top="{{top}}" enable-back-to-top="true" refresher-enabled="true" >
 <view class="result">
-  <include src="../../components/default/default.wxml"></include>
+  <logo></logo>
   <search></search>
-  <!-- toptips请求提示 -->
-  <mp-toptips msg="{{msg}}" type="{{type}}" show="{{show}}"></mp-toptips>
   <view class="search_result">
-  <view wx:for="{{dataList}}" wx:key="*this">{{index+1}}:{{item.hscode_name}}</view>
+  <view wx:for="{{dataList}}" wx:key="index">
+    <!-- 卡片区域 -->
+    <view class="result_card" bindtap="goDetail" data-hscode="{{item.hscode}}" data-title="{{item.product_name}}" data-example="{{item.element_example}}">
+      <view>
+      <!-- 遍历处理高亮搜索词 -->
+      <span class="result_name" wx:for="{{keyLists[index]}}" wx:for-item="color"  wx:key="index">
+						<span wx:if="{{color.show == true}}" style="font-size: 16px;color: #409EFF;font-weight:600;">{{color.str}}</span>
+						<span wx:else style="font-size: 16px;font-weight: bold;">{{color.str}}</span>
+      </span>
+      <view class="result_hscode">{{item.hscode}}</view>
+      <view class="result_retax"><span class="title_retax">出口退税率：</span>{{item.export_retax}}</view>
+      </view><icon class="iconfont icon-you"></icon>
+    </view>
   </view>
+  </view>
+  <my-footer></my-footer>
 </view>
+</scroll-view>
+<!-- 返回顶部 -->
+<view wx:if="{{goTopVisiable}}" class="goTop" catchtap="goTop">
+  <icon class="iconfont icon-fanhuidingbu"></icon>
+</view>
+<avatar></avatar>

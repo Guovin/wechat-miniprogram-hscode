@@ -1,0 +1,4 @@
+<!-- logo区域 -->
+<view class="logo_container">
+          <image class="logo_img" src="../../static/logo.png" alt="HSCode.VIP" bindtap="gohome"></image>
+        </view>

@@ -1,6 +1,9 @@
 {
   "usingComponents": {
     "mp-toptips": "weui-miniprogram/toptips/toptips",
-    "search": "../../components/search/search"
+    "search": "../../components/search/search",
+    "logo": "../../components/logo/logo",
+    "my-footer":"../../components/footer/footer",
+    "avatar": "../../components/avatar/avatar"
   }
 }

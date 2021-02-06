@@ -1,0 +1,184 @@
+/* pages/detail/detail.wxss */
+.detail{
+  background-color: #2C4362;
+  height: 100%;
+  min-height: 100vh;
+  display:flex;
+  flex-direction: column;
+}
+
+.detail_scroll{
+  background-color: #2C4362;
+}
+
+.detail_card{
+  width: 92%;
+  border-radius: 6rpx;
+  background-color:white;
+  margin: 0 auto 25rpx auto;
+  box-shadow: 0 2rpx 20rpx rgba(0, 0, 0, 0.15) !important;
+}
+
+search{
+  flex:1;
+}
+
+.nameCard_header{
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx;
+  border-bottom: 1px solid rgba(95, 92, 92, 0.1);
+}
+.header_left{
+  color:#6E6E6E;
+  font-size:25rpx;
+}
+
+.copy{
+  color:#2B85E4;
+  font-size:25rpx;
+}
+
+.infoCard{
+  font-size: 40rpx;
+  font-weight: bolder;
+  padding:20rpx;
+}
+
+.nameCard_content{
+  color: #409EFF;
+}
+
+.between_container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.unit_name{
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #606266;
+}
+
+.unit_value{
+  font-size: 30rpx;
+  font-weight: bolder;
+  color: #19be6b;
+}
+
+.no_unit{
+  font-size: 15px;
+  font-weight: bolder;
+  color: #909399
+}
+
+.nothing{
+  font-size: 30rpx;
+  color: #909399;
+}
+
+.code{
+  font-size: 30rpx;
+  font-weight: bolder;
+}
+
+.code_value{
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #606266;
+  max-width: 70%;
+  text-align: justify;
+}
+
+.sub_code{
+  color: #606266;
+  font-size: 25rpx;
+}
+
+.element_index{
+  color: #606266;
+  font-size: 25rpx;
+  font-weight: bolder;
+}
+
+.example_title{
+  color: #606266;
+  font-size: 25rpx;
+  font-weight: bold;
+  white-space: nowrap;
+  position: relative;
+  left: 10rpx;
+}
+
+.example_content{
+  font-size: 20rpx;
+  font-weight: bolder;
+  max-width: 70%;
+  text-align: justify;
+}
+
+.no_example{
+  font-size: 30rpx;
+  font-weight: bolder;
+  color: #909399;
+}
+
+.example_between{
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 20rpx 20rpx 0;
+  border-top: 1px solid rgba(95, 92, 92, 0.1);
+}
+
+.iconfont{
+  position: relative;
+  top: -6rpx;
+  margin-right: 6rpx;
+}
+
+my-footer{
+  margin-top: 80rpx;
+}
+
+.icon-fanhuidingbu{
+  margin-right: 0;
+}
+
+/* 暗黑模式下应用的样式 */
+@media (prefers-color-scheme: dark) {
+  .detail{
+    background: #191919;
+  }
+
+  .detail_scroll{
+    background-color: #191919;
+  }
+
+  .detail_card{
+    background:#2e2e2e;
+  }
+
+  .header_left{
+    color:#909399;
+  }
+
+  .sub_code{
+    color:#909399;
+  }
+
+  .unit_name{
+    color:white;
+  }
+
+  .code_value{
+    color:white;
+  }
+
+  .element_index{
+    color:white;
+  }
+
+  .example_title{
+    color:white;
+  }
+}

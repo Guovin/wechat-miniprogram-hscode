@@ -1,15 +1,27 @@
 Page({
   data: {
-    key:'',
-    cancel:true
+    value:'',
+    // cancel:true
   },
-  bindKeyInput: function (e) {
-    this.setData({
-      key: e.detail.value
-    })
-    wx.navigateTo({
-      url: `../result/result?key=${this.data.key}`,
-    })
+  
+  bindKeyInput(e) {
+    let inputValue = e.detail.value.trim()
+    if( inputValue == ''){
+      wx.showToast({
+        title: '请输入查询内容',
+        icon: 'error'
+      })
+      this.setData({
+        value: ''
+      })
+    }else{
+      this.setData({
+        value: inputValue
+      })
+        wx.navigateTo({
+          url: `../result/result?key=${inputValue}`,
+      })
+    }
   },
   clearInput() {
     this.setData({
@@ -26,10 +38,12 @@ inputFocus(e) {
     this.triggerEvent('focus', e.detail)
 },
 inputBlur(e) {
+  if(e.detail.value.trim() == ''){
     this.setData({
-        searchState: false
-    })
-    this.triggerEvent('blur', e.detail)
+      searchState: false
+  })
+  this.triggerEvent('blur', e.detail)
+  }
 },
 showInput() {
     this.setData({
@@ -39,8 +53,11 @@ showInput() {
 },
 hideInput() {
     this.setData({
-        searchState: false
+        searchState: true
     })
-    this.triggerEvent('cancel')
+    // this.triggerEvent('cancel')
+    wx.navigateTo({
+      url: `../result/result?key=${this.data.value}`,
+    })
 }
 })

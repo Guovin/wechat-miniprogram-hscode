@@ -1,18 +1,20 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/result/result",
-    "pages/logs/logs"
+    "pages/detail/detail"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "@navBackgroundColor",
     "navigationBarTitleText": "HSCode搜索",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "@navTextStyle"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "useExtendedLib": {
     "weui": true
-  }
+  },
+  "darkmode": true,
+  "themeLocation": "theme.json"
 }

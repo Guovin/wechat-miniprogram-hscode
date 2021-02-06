@@ -1,0 +1,10 @@
+<!-- 自定义组件：所有页面都显示的内容 -->
+<view class="footer">
+      <!-- footer区域 -->
+      <view class="weui-footer weui-footer_fixed-bottom">
+            <view class="weui-footer__links">
+                <navigator url="https://hscode.vip" class="weui-footer__link">HSCode搜索</navigator>
+            </view>
+            <view class="weui-footer__text">Copyright © hscode.vip</view>
+        </view>
+</view>

@@ -1,0 +1,158 @@
+<!--pages/detail/detail.wxml-->
+<scroll-view class="detail_scroll" style="height:{{scrollHeight}}px" bindscroll="scrollDistance" scroll-y="true" scroll-with-animation="true" scroll-top="{{top}}" enable-back-to-top="true" refresher-enabled="true">
+<view class="detail">
+    <logo></logo>
+    <search></search>
+    <view class="detail_container" wx:for="{{goodList}}" wx:key="index">
+      <!-- 基本信息 -->
+      <view wx:if="{{title}}" class="name_card detail_card" bindtap="copy" data-content="{{title}}">
+        <!-- 商品名称 -->
+        <view class="nameCard_header">
+        <span class="header_left"><icon class="iconfont icon-shangpin"></icon>商品名称</span>
+        <span class="copy">点击卡片复制名称</span>
+      </view>
+      <view class="nameCard_content infoCard">{{title}}</view>
+      </view>
+
+      <!-- 商品编码 -->
+      <view class="hscode_card detail_card" bindtap="copy" data-content="{{item.hscode}}">
+        <view class="nameCard_header">
+        <span class="header_left"><icon class="iconfont icon-HSbianma"></icon>商品编码</span>
+        <span class="copy">点击卡片复制编码</span>
+      </view>
+      <view class="infoCard">{{item.hscode}}</view>
+      </view>
+
+      <!-- 商品分类 -->
+      <view class="cate_card detail_card" bindtap="copy" data-content="{{item.hscode_name}}">
+        <view class="nameCard_header">
+        <span class="header_left"><icon class="iconfont icon-fenleishouye"></icon>商品分类</span>
+        <span class="copy">点击卡片复制分类</span>
+      </view>
+      <view class="infoCard">{{item.hscode_name}}</view>
+      </view>
+
+      <!-- 计量单位 -->
+      <view class="cate_card detail_card">
+        <view class="nameCard_header">
+        <span class="header_left"><icon class="iconfont icon-jiliang-xian"></icon>计量单位</span>
+      </view>
+      <view class="infoCard">
+						<view class="between_container">
+						<span class="unit_name">法定计量单位名称</span>
+						<span class="unit_value" >{{item.unit_1_name}}</span>
+						</view>
+						<view class="between_container">
+						<span class="unit_name">法定计量单位</span>
+						<span class="unit_value">{{item.unit_1}}</span>
+						</view>
+						<view class="between_container">
+						<span class="unit_name">法定第二计量单位名称</span>
+						<span class="unit_value"  wx:if="{{item.unit_2_name !== ''}}">{{item.unit_2_name}}</span>
+						<span class="no_unit" wx:else>无</span>
+						</view>
+						<view class="between_container">
+						<span class="unit_name">法定第二计量单位</span>
+						<span class="unit_value"  wx:if="{{item.unit_2 !== ''}}">{{item.unit_2}}</span>
+						<span class="no_unit" wx:else>无</span>
+						</view>
+      </view>
+      </view>
+
+      <!-- 税率信息 -->
+      <view class="cate_card detail_card">
+        <view class="nameCard_header">
+        <span class="header_left"><icon class="iconfont icon-exchangerate"></icon>税率信息</span>
+      </view>
+      <view class="infoCard">
+						<view class="between_container">
+						<span class="unit_name">普通税率</span>
+						<span class="unit_value" >{{item.ordinary}}</span>
+						</view>
+						<view class="between_container">
+						<span class="unit_name">优惠税率</span>
+						<span class="unit_value">{{item.most_discount}}</span>
+						</view>
+						<view class="between_container">
+						<span class="unit_name">出口税率</span>
+						<span class="unit_value">{{item.export_rate}}</span>
+						</view>
+						<view class="between_container">
+						<span class="unit_name">出口退税率</span>
+						<span class="unit_value">{{item.export_retax}}</span>
+            </view>
+            <view class="between_container">
+						<span class="unit_name">消费税率</span>
+						<span class="unit_value">{{item.customs_rate}}</span>
+            </view>
+            <view class="between_container">
+						<span class="unit_name">增值税率</span>
+						<span class="unit_value">{{item.add_tax_rate}}</span>
+						</view>
+      </view>
+      </view>
+
+      <!-- 监管条件 -->
+      <view class="cate_card detail_card">
+        <view class="nameCard_header">
+        <span class="header_left"><icon class="iconfont icon-jiandu"></icon>监管条件</span>
+        <span class="sub_code">{{item.regulatory_code}}</span>
+      </view>
+              <view class="infoCard">
+                <span class="nothing" wx:if="{{item.regulatory_code === ''}}">暂无</span>
+                <block wx:else>
+								<view wx:for="{{codeName}}" wx:for-item="code" wx:for-index="index" wx:key="index" class="between_container">
+								<span class="code">{{code}}</span>
+								<span class="code_value">{{codeDetail[index]}}</span>
+                </view>
+                </block>
+              </view>
+      </view>
+
+      <!-- 检疫检疫类别 -->
+      <view class="cate_card detail_card">
+        <view class="nameCard_header">
+        <span class="header_left"><icon class="iconfont icon-jianyanjianyi"></icon>检疫检疫类别</span>
+        <span class="sub_code">{{item.ciq_code}}</span>
+      </view>
+            <view class="infoCard">
+                <span class="nothing" wx:if="{{item.ciq_code === ''}}">暂无</span>
+                <block wx:else>
+								<view wx:for="{{ciqName}}" wx:for-item="ciq" wx:for-index="c" wx:key="index" class="between_container">
+								<span class="code">{{ciq}}</span>
+								<span class="code_value">{{ciqDetail[c]}}</span>
+                </view>
+                </block>
+            </view>
+      </view>
+
+      <!-- 申报要素 -->
+      <view class="cate_card detail_card">
+        <view class="nameCard_header">
+        <span class="header_left"><icon class="iconfont icon-xinshenqing"></icon>申报要素</span>
+      </view>
+            <view class="infoCard">
+                <span class="nothing" wx:if="{{item.element_require === ''}}">暂无</span>
+                <block wx:else>
+								<view wx:for="{{elementList}}" wx:for-item="element" wx:for-index="e" wx:key="index" class="between_container">
+								<span class="element_index">{{e+1}}</span>
+								<span class="code_value">{{element}}</span>
+                </view>
+                </block>
+            </view>
+            <!-- 申报样例 -->
+            <view class="example_between">
+                  <span class="example_title">申报要素样例：</span>
+                  <span wx:if="{{example !== ''}}" class="example_content">{{example}}</span>
+                  <span wx:else class="no_example">无</span>
+            </view>
+      </view>
+    </view>
+    <my-footer></my-footer>
+  </view>
+</scroll-view>
+ <!-- 返回顶部 -->
+ <view wx:if="{{goTopVisiable}}" class="goTop" catchtap="goTop">
+    <icon class="iconfont icon-fanhuidingbu"></icon>
+    </view>
+<avatar></avatar>
